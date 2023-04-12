@@ -1,0 +1,136 @@
+---
+title: "Figure 3: Phenotypic phase planes, FBA, and optimality-based criteria. A-G subplots"
+output: html_notebook
+author: "Alejandro Javier Acevedo Aracena, PhD - a.acevedo.aracena@gmail.com"
+date: "May 23th, 2021"
+---
+Set paths
+```{r message=FALSE, warning=FALSE}
+figure <- 'Figure_3'
+local_working_directory <- "~/AA_PostDoc/Acevedo_et_al_2021_neuron_astrocyte_metabolism"
+file.path(local_working_directory,figure)      -> figure_folder_path
+file.path(local_working_directory,'aa_functions.R') -> source_path
+source(source_path)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+
+import_phpp_data(figure_folder_path) -> phpps
+
+pluck(phpps,'phpp_NaEX_Neuron') %>% get_phpp_contours(inter_colors=.10, breaks_lines=c(346.771), label_placement_fraction=.3, nudge_y=2.2 )  +guides(fill = guide_colorbar(title ="NaEX"))         ->phpp_NaEX_Neuron
+pluck(phpps,'phpp_Y_o2_glc')  %>% get_phpp_contours(inter_colors=.04, breaks_lines=c(6.0), label_placement_fraction= 0.3 , nudge_y=2.2 ) +guides(fill = guide_colorbar(title = expression(Y['O'['2']*'/Glc']*'') ))             ->phpp_Y_o2_glc
+
+pluck(phpps,'phpp_L_LACt2r_Int')  %>% get_phpp_contours(inter_colors=.05, breaks_lines=c(7.037), label_placement_fraction= 0.3 , nudge_y=2.9 )+guides(fill = guide_colorbar(title ="Lact"))        ->phpp_L_LACt2r_Int
+pluck(phpps,'phpp_GLUVESSEC_Neuron' ) %>% get_phpp_contours(inter_colors=.05, breaks_lines=c(4.222), label_placement_fraction= 0.3 , nudge_y=2.9 )+guides(fill = guide_colorbar(title ="GluVE"))    ->phpp_GLUVESSEC_Neuron
+pluck(phpps,'phpp_objective' ) %>% get_phpp_contours(inter_colors=.4, breaks_lines=c(139.731), label_placement_fraction= 0.2 , nudge_y=2.9 )+guides(fill = guide_colorbar(title ="Obj"))       ->phpp_objective
+
+pluck(phpps,'phpp_Y_ATP_glc' ) %>% get_phpp_contours(inter_colors=.1, breaks_lines=c(28.696), label_placement_fraction= 0.6 , nudge_y=-3 ) +guides(fill = guide_colorbar(title = expression('Y'['ATP/Glc']*'')  )) +   scale_y_continuous(expand = c(0,-3)) ->phpp_Y_ATP_glc
+
+right_panel <-  ggarrange(phpp_NaEX_Neuron, phpp_Y_o2_glc,phpp_Y_ATP_glc, phpp_L_LACt2r_Int, phpp_GLUVESSEC_Neuron, phpp_objective, ncol = 1,  labels = c('a','b','c','d','e','f') )
+right_panel %<>% annotate_figure(left = text_grob("Oxygen uptake rate (\U003BCM/s)", rot = 90), bottom = text_grob("Glucose uptake rate(\U003BCM/s)", rot = 0))
+```
+
+
+```{r fig.height=13, fig.width=10, message=FALSE, warning=FALSE}
+fba_data          <-readr::read_rds(file.path(local_working_directory,'Data/all_data.rds')) %>% get_fba_data
+
+fba_data %>% get_optimality_values %>% pluck("optimality_values")  -> optimality_values
+
+library(ggplot2)
+library(plotly)
+
+ggplot(optimality_values, aes(x= reorder(ID, value),  y= value, fill = variable)) + 
+  geom_bar(stat='identity') + 
+  #facet_wrap(~Node, dir = "v") + 
+   facet_grid(. ~ `Node type`) +
+  theme(strip.text.x = element_text(size = 7), axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=5),legend.title = element_blank(),
+                                    axis.title.x=element_blank(),axis.title.y=element_blank(),legend.position="top",axis.text.y=element_text(angle=0,hjust=1,vjust=.1,size=3.7),
+                                    axis.ticks = element_blank()) +   # Centre plot title
+                              scale_fill_brewer(palette = "Dark2") + coord_flip()  -> optimality #
+
+
+
+left_panel <-  ggarrange(optimality, ncol = 1, nrow = 1,  labels = c('g') )
+left_panel %<>% annotate_figure(left = text_grob("Reactions", rot = 90), bottom = text_grob("Optimality", rot = 0))
+graphs_panel <- ggarrange(NULL, NULL, NULL, ncol = 1, nrow = 3, labels = c("h","i","j") )
+left_right_panel <- ggarrange(right_panel, left_panel, graphs_panel, ncol = 3,  widths= c(.4,.6,1))
+```
+```{r}
+#optimality_values %>% pivot_wider(names_from = variable, values_from = value) %>% mutate(optimality = Sensitivity+Flux) -> fba_optimality_scores
+```
+
+```{r}
+ggsave(file=file.path(figure_folder_path, "left_right_panel.png"), plot=left_right_panel, width=10, height=13, dpi = 470)
+fba_data %>% select(ID, Reaction, "Node type") %>% set_names(c('ID', 'Reaction', "Node"))  %>% write_csv(file.path(figure_folder_path, "node_attributes.csv"))
+fba_data %>% get_optimality_values %>% pluck("optimality_df") %>% write_csv(file.path(figure_folder_path, "optimality_values.csv"))
+```
+
+
+
+
+```{r fig.height=3, fig.width=9}
+
+fba_data             %>%dplyr:: select(c("ID", "Flux", "Sensitivity")) -> id_flux_sensi
+reactions_with_genes <- readr::read_csv("NAMU_genes_2_rxns_mapping.csv") %>%  mutate(rxns = str_split(rxns, ",") )  %>% 
+  unnest(rxns) %>%  mutate(rxns = str_replace_all(rxns, "\\'|\\[|\\]",""))%>%set_names(c("gene", "ID")) 
+
+
+inner_join(reactions_with_genes, id_flux_sensi) -> fba_plus_genes
+fba_plus_genes %>% mutate(Optimality= abs(Flux)+abs(Sensitivity)) -> fba_plus_genes
+
+fba_plus_genes %>% filter( abs(Flux) > .0001) -> genes_flux
+
+fba_plus_genes %>% filter( abs(Sensitivity) > .0001) -> genes_sensitivity
+
+
+
+fba_plus_genes %>% filter( abs(Optimality) > .0001) -> genes_optimality
+
+
+fba_genes <- list(genes_flux$gene, genes_sensitivity$gene, genes_optimality$gene) %>% purrr::set_names(c('Flux', 'Sensitivity', "AO"))
+
+
+
+library(clusterProfiler)
+library(ReactomePA)
+
+ fba_genes%>%compareCluster(fun='enrichPathway', pvalueCutoff=5e-2) -> hola
+
+ 
+hola%>% dotplot(font.size=8) -> enrichPathway
+```
+
+
+
+
+```{r fig.height=13, fig.width=11.5, message=FALSE, warning=FALSE, paged.print=FALSE}
+enrichPathway_subplots <- ggarrange(NULL, NULL, enrichPathway, ncol = 1, nrow = 3, heights = c(1,1,.7), labels = c("h","i","j"))
+
+
+right_subplots <- ggarrange(right_panel, left_panel,enrichPathway_subplots, ncol = 3, nrow = 1, widths = c(.41,.69,1.35))
+right_subplots
+```
+
+
+
+
+```{r}
+
+
+ggsave(file.path(figure_folder_path, "subplots_without_graph.png"), right_subplots, height=13, width=12.5, bg = "white" , dpi = 500)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
