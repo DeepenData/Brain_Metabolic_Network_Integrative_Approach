@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="escher-svg"
+   width="432.9729"
+   height="177.61821"
+   version="1.1"
+   id="svg908"
+   sodipodi:docname="anls_astro.svg"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title10452">Figura de figuras</title>
+  <sodipodi:namedview
+     id="namedview910"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.3921165"
+     inkscape:cx="160.54691"
+     inkscape:cy="147.25779"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1974"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style2">svg.escher-svg #mouse-node {
+  fill: none;
+}
+svg.escher-svg #canvas {
+  stroke: #ccc;
+  stroke-width: 7px;
+  fill: white;
+}
+svg.escher-svg .resize-rect {
+  fill: black;
+  opacity: 0;
+  stroke: none;
+}
+svg.escher-svg .label {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 8px;
+  fill: black;
+  stroke: none;
+  text-rendering: optimizelegibility;
+  cursor: default;
+}
+svg.escher-svg .reaction-label {
+  font-size: 30px;
+  fill: rgb(32, 32, 120);
+  text-rendering: optimizelegibility;
+}
+svg.escher-svg .node-label {
+  font-size: 20px;
+}
+svg.escher-svg .gene-label {
+  font-size: 18px;
+  fill: rgb(32, 32, 120);
+  text-rendering: optimizelegibility;
+  cursor: default;
+}
+svg.escher-svg .text-label .label {
+  font-size: 50px;
+}
+svg.escher-svg .text-label-input {
+  font-size: 50px;
+}
+svg.escher-svg .node-circle {
+  stroke-width: 2px;
+}
+svg.escher-svg .midmarker-circle, svg.escher-svg .multimarker-circle {
+  fill: white;
+  fill-opacity: 0.2;
+  stroke: rgb(50, 50, 50);
+}
+svg.escher-svg g.selected .node-circle{
+  stroke-width: 6px;
+  stroke: rgb(20, 113, 199);
+}
+svg.escher-svg g.selected .label {
+  fill: rgb(20, 113, 199);
+}
+svg.escher-svg .metabolite-circle {
+  stroke: rgb(162, 69, 16);
+  fill: rgb(224, 134, 91);
+}
+svg.escher-svg g.selected .metabolite-circle {
+  stroke: rgb(5, 2, 0);
+}
+svg.escher-svg .segment {
+  stroke: #334E75;
+  stroke-width: 10px;
+  fill: none;
+}
+svg.escher-svg .arrowhead {
+  fill: #334E75;
+}
+svg.escher-svg .stoichiometry-label-rect {
+  fill: white;
+  opacity: 0.5;
+}
+svg.escher-svg .stoichiometry-label {
+  fill: #334E75;
+  font-size: 17px;
+}
+svg.escher-svg .membrane {
+  fill: none;
+  stroke: rgb(255, 187, 0);
+}
+svg.escher-svg .brush .extent {
+  fill-opacity: 0.1;
+  fill: black;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+svg.escher-svg #brush-container .background {
+  fill: none;
+}
+svg.escher-svg .bezier-circle {
+  fill: rgb(255,255,255);
+}
+svg.escher-svg .bezier-circle.b1 {
+  stroke: red;
+}
+svg.escher-svg .bezier-circle.b2 {
+  stroke: blue;
+}
+svg.escher-svg .connect-line{
+  stroke: rgb(200,200,200);
+}
+svg.escher-svg .direction-arrow {
+  cursor: default;
+  stroke: black;
+  stroke-width: 1px;
+  fill: white;
+  opacity: 0.3;
+}
+svg.escher-svg .start-reaction-target {
+  stroke: rgb(100,100,100);
+  fill: none;
+  opacity: 0.5;
+}
+svg.escher-svg .rotation-center-line {
+  stroke: red;
+  stroke-width: 5px;
+}
+svg.escher-svg .highlight {
+  fill: #D97000;
+  text-decoration: underline;
+}
+svg.escher-svg .node-to-combine {
+  stroke-width: 12px !important;
+}
+</style>
+  </defs>
+  <g
+     id="brush-container"
+     fill="none"
+     pointer-events="all"
+     style="-webkit-tap-highlight-color:rgba(0, 0, 0, 0)"
+     transform="translate(602.06509,384.61203)">
+    <rect
+       class="overlay"
+       pointer-events="all"
+       x="-1536"
+       y="-763.20001"
+       width="4608"
+       height="2289.6001"
+       id="rect16" />
+    <rect
+       class="selection"
+       fill="#777777"
+       fill-opacity="0.3"
+       stroke="#ffffff"
+       shape-rendering="crispEdges"
+       style="display:none"
+       id="rect18"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--n"
+       style="display:none"
+       id="rect20"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--e"
+       style="display:none"
+       id="rect22"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--s"
+       style="display:none"
+       id="rect24"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--w"
+       style="display:none"
+       id="rect26"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--nw"
+       style="display:none"
+       id="rect28"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--ne"
+       style="display:none"
+       id="rect30"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--se"
+       style="display:none"
+       id="rect32"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+    <rect
+       class="handle handle--sw"
+       style="display:none"
+       id="rect34"
+       width="0"
+       height="0"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g2317"
+     transform="translate(-278.10685,-1076.3868)" />
+  <g
+     id="g1974"
+     transform="translate(-936.73547,-1161.9262)">
+    <g
+       id="r5"
+       class="reaction"
+       transform="translate(1536,763.20001)">
+      <g
+         class="segment-group"
+         id="s45">
+        <path
+           class="segment"
+           d="m -409.4375,448.70769 h 20"
+           pointer-events="visibleStroke"
+           id="path351" />
+        <g
+           class="arrowheads"
+           id="g353" />
+        <g
+           class="stoichiometry-labels"
+           id="g355" />
+      </g>
+      <g
+         class="segment-group"
+         id="s46">
+        <path
+           class="segment"
+           d="m -369.4375,448.70769 h -20"
+           pointer-events="visibleStroke"
+           id="path358" />
+        <g
+           class="arrowheads"
+           id="g360" />
+        <g
+           class="stoichiometry-labels"
+           id="g362" />
+      </g>
+      <g
+         class="segment-group"
+         id="s47">
+        <path
+           class="segment"
+           d="m -369.4375,448.70769 c 46,0 51.25,18 69.22245,51.01606"
+           pointer-events="visibleStroke"
+           id="path365" />
+        <g
+           class="arrowheads"
+           id="g369">
+          <path
+             class="arrowhead"
+             d="M -10,0 0,13 10,0 Z"
+             transform="rotate(-28.561876,831.50398,839.57679)"
+             id="path367" />
+        </g>
+        <g
+           class="stoichiometry-labels"
+           id="g371" />
+      </g>
+      <g
+         class="segment-group"
+         id="s48">
+        <path
+           class="segment"
+           d="m -409.4375,448.70769 c -42,0 -96.25,0 -125,0"
+           pointer-events="visibleStroke"
+           id="path374" />
+        <g
+           class="arrowheads"
+           id="g376" />
+        <g
+           class="stoichiometry-labels"
+           id="g378" />
+      </g>
+      <g
+         class="segment-group"
+         id="s49">
+        <path
+           class="segment"
+           d="m -369.4375,448.70769 c 42,0 96.25,0 112,0"
+           pointer-events="visibleStroke"
+           id="path381" />
+        <g
+           class="arrowheads"
+           id="g385">
+          <path
+             class="arrowhead"
+             d="M -10,0 0,13 10,0 Z"
+             transform="rotate(-90,95.635096,353.0726)"
+             id="path383" />
+        </g>
+        <g
+           class="stoichiometry-labels"
+           id="g387" />
+      </g>
+      <g
+         class="segment-group"
+         id="s50">
+        <path
+           class="segment"
+           d="m -409.4375,448.70769 c -46,0 -51.25,18 -75.43785,62.43398"
+           pointer-events="visibleStroke"
+           id="path390" />
+        <g
+           class="arrowheads"
+           id="g392" />
+        <g
+           class="stoichiometry-labels"
+           id="g394" />
+      </g>
+    </g>
+    <g
+       class="node"
+       id="n54"
+       transform="translate(1536,763.20001)">
+      <circle
+         class="node-circle metabolite-circle"
+         transform="translate(-214.4375,448.70769)"
+         r="20"
+         id="circle399"
+         cx="0"
+         cy="0" />
+      <text
+         class="node-label label"
+         visibility="visible"
+         id="text401"
+         x="-250.09045"
+         y="419.23251">lac-L[I]</text>
+    </g>
+    <g
+       class="node"
+       id="n49"
+       transform="translate(1536,763.20001)">
+      <circle
+         class="node-circle metabolite-circle"
+         transform="translate(-564.4375,448.70769)"
+         r="20"
+         id="circle409"
+         cx="0"
+         cy="0" />
+      <text
+         class="node-label label"
+         visibility="visible"
+         id="text411"
+         x="-594.87976"
+         y="418.92151">h[cA]</text>
+    </g>
+    <g
+       class="node"
+       id="n55"
+       transform="translate(1536,763.20001)">
+      <circle
+         class="node-circle metabolite-circle"
+         transform="translate(-494.4375,528.70769)"
+         r="10"
+         id="circle419"
+         cx="0"
+         cy="0" />
+      <text
+         class="node-label label"
+         visibility="visible"
+         transform="translate(-543.0375,568.70769)"
+         id="text421">lac-L[cA]</text>
+    </g>
+    <g
+       class="node"
+       id="n53"
+       transform="translate(1536,763.20001)">
+      <circle
+         class="node-circle metabolite-circle"
+         transform="translate(-284.4375,528.70769)"
+         r="10"
+         id="circle589"
+         cx="0"
+         cy="0" />
+      <text
+         class="node-label label"
+         visibility="visible"
+         transform="translate(-306.0375,568.70769)"
+         id="text591">h[I]</text>
+    </g>
+  </g>
+  <metadata
+     id="metadata10450">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Figura de figuras</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,27 @@
+# Esto hace un ambiente containerizado
+# usaremos mamba para recrearlo en un contenedor
+# puede demorar :/ 
+
+FROM condaforge/mambaforge
+
+# Define la carpeta de trabajo
+WORKDIR /namu_container
+
+# Creamos el ambiente de conda 
+COPY conda_NAMU2021b.yml conda_NAMU2021b.yml
+RUN mamba env create --file conda_NAMU2021b.yml
+
+# Instala cosas en el base
+RUN mamba install --yes \
+    pandas \
+    numpy \
+    sklearn \
+    cobra \
+    networkx \
+    matplotlib \
+    graph_tool \
+    ray \
+    numba
+
+# Copia todo dentro del entorno del contenedor
+COPY . .
