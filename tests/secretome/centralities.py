@@ -62,11 +62,11 @@ def compute_centralities(graph, alpha=0.005):
     return centralities
 # %%
 G          = nx.Graph(nx.read_graphml("tests/secretome/G.graphml"))
-color_list = [data['name'] for node, data in G.nodes(data=True)]
+names_list = [data['name'] for _, data in G.nodes(data=True)]
 
 
 
-mapping = dict(zip(G.nodes, color_list))
+mapping = dict(zip(G.nodes, names_list))
 
 G = nx.relabel_nodes(G, mapping, copy=False)
 G.nodes(data=True)
