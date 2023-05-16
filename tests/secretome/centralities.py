@@ -32,7 +32,7 @@ def compute_centralities(graph, alpha=0.005):
     
     cfcc  = nx.current_flow_closeness_centrality(graph)
     cfbc  = nx.current_flow_betweenness_centrality(graph)
-    soc   = nx.second_order_centrality(graph)
+    #soc   = nx.second_order_centrality(graph)
     lac   = nx.laplacian_centrality(graph)
     
 
