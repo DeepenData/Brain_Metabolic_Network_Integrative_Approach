@@ -1,4 +1,6 @@
 # %%
+import ray
+
 import networkx as nx
 import numpy    as np
 import pandas   as pd 
@@ -15,6 +17,7 @@ def get_largest_component(grafo):
     return G
 
 
+@ray.remote # TODO: incluir parametros del metodo
 def compute_centralities(graph, alpha=0.005):
     """Computa las doce centralidades y devuelve una DataFrame (no reindexado) con estas"""
     #if lite == False:
@@ -76,7 +79,8 @@ G.nodes(data=True)
 G2 = get_largest_component(G)
 
 
-compute_centralities(G2).to_parquet("tests/secretome/centralities.parquet")
+g2_df = ray.get( compute_centralities.remote(G2) )
+g2_df.to_parquet("tests/secretome/centralities.parquet")
 
 
 import seaborn as sns
@@ -94,10 +98,6 @@ min_max_scaler = MinMaxScaler()
 df_scaled = pd.DataFrame(min_max_scaler.fit_transform(df_standard_scaled), columns=df.columns, index=df.index)
 
 # Creating the clustermap
-
-
-
-
 def draw_clustermap(df, colorbar_pos):
     # Creating the clustermap
     g = sns.clustermap(df,  metric='euclidean', method='centroid')
