@@ -34,3 +34,9 @@ INFO:root:
             total centralites: 9
             nodes removed: 2
             
+05/31/2023 08:30:00 PM - root - INFO - The dictionary was successfully saved to 'centralities.pickle'.
+05/31/2023 08:30:00 PM - root - INFO - 
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
