@@ -1,0 +1,36 @@
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+        total nodes: 1056
+        total centralites: 9
+        nodes removed: 2
+        
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+05/31/2023 08:12:40 PM - root - INFO - The dictionary was successfully saved to 'centralities.pickle'.
+05/31/2023 08:12:40 PM - root - INFO - 
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+05/31/2023 08:15:36 PM - root - INFO - The dictionary was successfully saved to 'centralities.pickle'.
+05/31/2023 08:15:36 PM - root - INFO - 
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+05/31/2023 08:18:21 PM - root - INFO - The dictionary was successfully saved to 'centralities.pickle'.
+05/31/2023 08:18:21 PM - root - INFO - 
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            

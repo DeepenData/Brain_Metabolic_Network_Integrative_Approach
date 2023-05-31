@@ -1,0 +1,72 @@
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+        total nodes: 1056
+        total centralites: 9
+        nodes removed: 2
+        
+ERROR:root:Failed to remove nodes and calculate centralities: [36mray::remove_node_and_calculate_centralities()[39m (pid=140680, ip=192.168.100.167)
+  File "/DeepenData/Repos/Complex_Networks_Integrative_Modeling/centralities.py", line 168, in remove_node_and_calculate_centralities
+    new_centralities = calculate_centralities(largest_connected_subgraph, use_quick_measurements=False, alpha=compute_alpha_for_graph(largest_connected_subgraph))
+  File "/DeepenData/Repos/Complex_Networks_Integrative_Modeling/centralities.py", line 125, in compute_alpha_for_graph
+    adjacency_matrix = nx.adjacency_matrix(graph).toarray()
+  File "/DeepenData/.miniconda/envs/networks/lib/python3.10/site-packages/networkx/linalg/graphmatrix.py", line 157, in adjacency_matrix
+    return nx.to_scipy_sparse_array(G, nodelist=nodelist, dtype=dtype, weight=weight)
+  File "/DeepenData/.miniconda/envs/networks/lib/python3.10/site-packages/networkx/convert_matrix.py", line 546, in to_scipy_sparse_array
+    import scipy as sp
+ModuleNotFoundError: No module named 'scipy'
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+ERROR:root:Failed to remove nodes and calculate centralities: [36mray::remove_node_and_calculate_centralities()[39m (pid=148895, ip=192.168.100.167)
+  File "/DeepenData/Repos/Complex_Networks_Integrative_Modeling/centralities.py", line 168, in remove_node_and_calculate_centralities
+    new_centralities = calculate_centralities(largest_connected_subgraph, use_quick_measurements=False, alpha=compute_alpha_for_graph(largest_connected_subgraph))
+  File "/DeepenData/Repos/Complex_Networks_Integrative_Modeling/centralities.py", line 125, in compute_alpha_for_graph
+    adjacency_matrix = nx.adjacency_matrix(graph).toarray()
+  File "/DeepenData/.miniconda/envs/networks/lib/python3.10/site-packages/networkx/linalg/graphmatrix.py", line 157, in adjacency_matrix
+    return nx.to_scipy_sparse_array(G, nodelist=nodelist, dtype=dtype, weight=weight)
+  File "/DeepenData/.miniconda/envs/networks/lib/python3.10/site-packages/networkx/convert_matrix.py", line 546, in to_scipy_sparse_array
+    import scipy as sp
+ModuleNotFoundError: No module named 'scipy'
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+ERROR:root:Failed to remove nodes and calculate centralities: [36mray::remove_node_and_calculate_centralities()[39m (pid=155629, ip=192.168.100.167)
+  File "/DeepenData/Repos/Complex_Networks_Integrative_Modeling/centralities.py", line 168, in remove_node_and_calculate_centralities
+    new_centralities = calculate_centralities(largest_connected_subgraph, use_quick_measurements=False, alpha=compute_alpha_for_graph(largest_connected_subgraph))
+  File "/DeepenData/Repos/Complex_Networks_Integrative_Modeling/centralities.py", line 125, in compute_alpha_for_graph
+    adjacency_matrix = nx.adjacency_matrix(graph).toarray()
+  File "/DeepenData/.miniconda/envs/networks/lib/python3.10/site-packages/networkx/linalg/graphmatrix.py", line 157, in adjacency_matrix
+    return nx.to_scipy_sparse_array(G, nodelist=nodelist, dtype=dtype, weight=weight)
+  File "/DeepenData/.miniconda/envs/networks/lib/python3.10/site-packages/networkx/convert_matrix.py", line 546, in to_scipy_sparse_array
+    import scipy as sp
+ModuleNotFoundError: No module named 'scipy'
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+INFO:root:The dictionary was successfully saved to 'centralities.pickle'.
+INFO:root:
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
+05/31/2023 04:09:13 PM - root - INFO - The dictionary was successfully saved to 'centralities.pickle'.
+05/31/2023 04:09:13 PM - root - INFO - 
+            total nodes: 1056
+            total centralites: 9
+            nodes removed: 2
+            
