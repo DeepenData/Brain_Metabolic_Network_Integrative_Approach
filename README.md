@@ -1,7 +1,7 @@
 # Metabolic switch in the aging astrocyte supported via integrative approach comprising network and transcriptome analyses
 
 This repository contains the code for the calculations of the centralities and fluxes from the metabolic network as described in our research paper. 
-
+![Image](images/net_analysis.png)
 ## Authors:
 
 - Alejandro Acevedo, Instituto de Nutrición y Tecnología de Alimentos (INTA), Universidad de Chile, Santiago, Región Metropolitana 7800003, Chile 
